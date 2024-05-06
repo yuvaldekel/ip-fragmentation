@@ -26,7 +26,7 @@ def main():
             check = False
             if len(flow) == 0:
                 check = True
-            elif flow[-1] == packet[IP].id"
+            elif flow[-1] == packet[IP].id:
                 check = True
 
             if check:
