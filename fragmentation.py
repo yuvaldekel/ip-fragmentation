@@ -1,4 +1,4 @@
-def fragment_string(string, pieces = 0):
+def fragment_string(string, pieces = 3):
     fragments = []
     
     length = len(string)
