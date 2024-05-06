@@ -17,16 +17,27 @@ def main():
 
         data = client_socket.recvfrom(1024)
         
+        flow = []
         answers = {}
 
         while True:
             packet = sniff(count = 1)
-            if packet[IP].id == 1:
+            
+            check = False
+            if len(flow) == 0:
+                check = True
+            elif flow[-1] == packet[IP].id"
+                check = True
+
+            if check:
                 index = packet[IP].frag
                 data = packet[Raw].load
+                
                 answers[index] = data
+
                 if packet[IP] != 'MF':
                     break
+                flow.append(packet[IP].id)
 
         sorted_answers = dict(sorted(answers.items()))
 
